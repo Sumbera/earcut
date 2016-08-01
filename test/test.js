@@ -38,18 +38,18 @@ areaTest('bad-diagonals', 7);
 
 test('indices-2d', function (t) {
     var indices = earcut([10, 0, 0, 50, 60, 60, 70, 10]);
-    t.same(indices, [1, 0, 3, 3, 2, 1]);
+    t.same(indices.slice(0), [1, 0, 3, 3, 2, 1]);
     t.end();
 });
 
 test('indices-3d', function (t) {
     var indices = earcut([10, 0, 0, 0, 50, 0, 60, 60, 0, 70, 10, 0], null, 3);
-    t.same(indices, [1, 0, 3, 3, 2, 1]);
+    t.same(indices.slice(0), [1, 0, 3, 3, 2, 1]);
     t.end();
 });
 
 test('empty', function (t) {
-    t.same(earcut([]), []);
+    t.same(earcut([]).length, [].length);
     t.end();
 });
 
